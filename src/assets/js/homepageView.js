@@ -7,6 +7,12 @@ export default () => {
   const bottom = footer();
   const main = createElement('main', { class: 'main d-flex' });
   const foodList = createElement('ul', { class: 'food-list d-flex' });
+  const root = createElement('div', { class: 'root', id: 'root' });
+  const modalOverlay = createElement('div', { class: 'modal-overlay', id: 'modal-overlay' });
+  const content = createElement('div', { class: 'content', id: 'content' });
+
   main.append(foodList);
-  document.body.append(navigation, main, bottom);
+  root.append(navigation, main, bottom);
+  content.append(root, modalOverlay);
+  document.body.append(content);
 };
