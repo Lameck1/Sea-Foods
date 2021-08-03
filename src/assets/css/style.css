@@ -5,6 +5,30 @@ body {
   background-color: #fff;
 }
 
+.header {
+  margin-bottom: 3rem;
+}
+
+.nav {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+}
+
 .main {
   width: 70%;
   margin: 0 auto;
