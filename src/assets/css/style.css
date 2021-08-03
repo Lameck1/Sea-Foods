@@ -1,3 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons&display=swap");
+@import 'reset.css';
+
 body {
   background-color: #fff;
+}
+
+.main {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.food-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.food-container {
+  flex-direction: column;
+}
+
+.meal-thumb {
+  width: 100%;
+}
+
+.details-div {
+  align-items: center;
+  justify-content: space-between;
 }
