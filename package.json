@@ -1,0 +1,57 @@
+{
+  "name": "sea-foods",
+  "version": "1.0.0",
+  "description": "Sea Foods",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack serve --open",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lameck1/Sea-Foods.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lameck1/Sea-Foods/issues"
+  },
+  "homepage": "https://github.com/Lameck1/Sea-Foods#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
+    "@webpack-cli/generators": "^2.2.0",
+    "autoprefixer": "^10.3.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
+    "mini-css-extract-plugin": "^2.1.0",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "prettier": "^2.3.2",
+    "style-loader": "^3.2.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.20.1",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
