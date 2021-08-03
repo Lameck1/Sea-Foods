@@ -1,4 +1,7 @@
 import createElement from './createElement';
+import createCommentModal from '../modal';
+import fetchSingleMeal from '../fetchSingleMeal';
+import { toggleModal } from '../dom.utils';
 
 export default (foods, foodList) => {
   foods.forEach((food) => {
@@ -14,6 +17,19 @@ export default (foods, foodList) => {
     const likes = createElement('span', { class: 'material-icons' }, 'favorite_border');
     const likesCount = createElement('span', { class: 'likes-count' }, '0');
     const commentsBtn = createElement('button', { class: 'comments-btn' }, 'COMMENTS');
+
+    commentsBtn.addEventListener('click', async () => {
+      const modal = document.querySelector('#modal-overlay');
+      const content = document.querySelector('#content');
+      const { meals } = await fetchSingleMeal(idMeal);
+      toggleModal(modal, content);
+      modal.appendChild(
+        createCommentModal({
+          meals,
+          toggle: toggleModal,
+        }),
+      );
+    });
 
     likesDiv.append(likes, likesCount);
     detailsDiv.append(foodName, likesDiv);
