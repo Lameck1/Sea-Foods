@@ -25,5 +25,9 @@ export const header = (logo) => {
 };
 
 export const footer = () => {
-
+  const footer = createElement('div', { class: 'footer' });
+  const p = createElement('p');
+  p.textContent = 'Created by Microverse under CC License';
+  footer.append(p);
+  return footer;
 };
