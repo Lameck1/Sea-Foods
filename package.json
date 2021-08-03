@@ -13,7 +13,7 @@
     "deploy": "gh-pages -d dist",
     "stylelint": "stylelint \"**/*.{css,scss}\"",
     "eslint": "eslint .",
-    "lint": "npm run webhint && npm run stylelint && npm run eslint"
+    "lint": "npm run stylelint && npm run eslint"
   },
   "repository": {
     "type": "git",
