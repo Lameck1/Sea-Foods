@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Sea Foods",
   "main": "index.js",
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
+  },
   "scripts": {
     "test": "jest",
     "start": "webpack serve --open",
@@ -29,6 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.9",
+    "@testing-library/dom": "^8.1.0",
     "@webpack-cli/generators": "^2.2.0",
     "autoprefixer": "^10.3.1",
     "babel-eslint": "^10.1.0",
