@@ -60,3 +60,9 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+.footer p {
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+  font-size: 1.3rem;
+}
