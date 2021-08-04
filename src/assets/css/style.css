@@ -14,6 +14,26 @@ img {
   cursor: pointer;
 }
 
+.btn {
+  outline: none;
+  border: none;
+  display: block;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  font-weight: 400;
+}
+
+.comments-btn {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  background: #c10623;
+}
+
 .header {
   margin-bottom: 3rem;
 }
@@ -141,8 +161,9 @@ img {
 }
 
 .brief-details h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .list-details {
@@ -151,7 +172,7 @@ img {
 }
 
 .tag {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 
 .likes-div {
@@ -195,4 +216,21 @@ img {
 .like-icon:hover::after,
 .like-icon:hover {
   background-color: #b36b6b;
+}
+
+.comments h4 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.comment-list {
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.comment {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
