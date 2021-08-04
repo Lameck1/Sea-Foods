@@ -8,7 +8,7 @@ const baseModal = (args) => {
     meals, toggle, content, formContent,
   } = args;
   const {
-    strMeal, strMealThumb, strCategory, strArea,
+    strMeal, strMealThumb, strCategory, strArea, strSource, strYoutube,
   } = meals[0];
   const modal = createElement('div', { class: 'modal' });
   const modalContent = createElement('div', { class: 'modal-content' });
@@ -30,7 +30,17 @@ const baseModal = (args) => {
   mealCategory.textContent = `Category: ${strCategory}`;
   const mealArea = createElement('li', { class: 'tag' });
   mealArea.textContent = `Area: ${strArea}`;
-  listDetails.append(mealCategory, mealArea);
+  const mealIngredient = createElement('li', { class: 'tag' });
+  mealIngredient.innerHTML = 'Ingredient: ';
+  const ingredientLink = createElement('a', { href: `${strSource}`, target: 'blank' });
+  ingredientLink.textContent = 'Ingredient Link';
+  mealIngredient.appendChild(ingredientLink);
+  const mealVideo = createElement('li', { class: 'tag' });
+  mealVideo.innerHTML = 'Video: ';
+  const videoLink = createElement('a', { href: `${strYoutube}`, target: 'blank' });
+  videoLink.textContent = 'Video Link';
+  mealVideo.appendChild(videoLink);
+  listDetails.append(mealCategory, mealArea, mealIngredient, mealVideo);
   briefDetails.append(h3, listDetails);
   modalBody.append(briefDetails, content);
   modalContent.append(modalHeader, modalBody, formContent);
