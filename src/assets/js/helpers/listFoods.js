@@ -20,7 +20,7 @@ export default (foods, likes) => {
     const likesDiv = createElement('div', { class: 'likes-div d-flex' });
     const likeIcon = createElement('span', { class: 'like-icon', 'data-id': `${idMeal}` }, '');
     const likesCount = createElement('span', { class: 'likes-count' }, `${item ? item.likes : 0}`);
-    const commentsBtn = createElement('button', { class: 'comments-btn' }, 'COMMENTS');
+    const commentsBtn = createElement('button', { class: 'btn comments-btn' }, 'COMMENTS');
 
     commentsBtn.addEventListener('click', async () => {
       const modal = document.querySelector('#modal-overlay');
