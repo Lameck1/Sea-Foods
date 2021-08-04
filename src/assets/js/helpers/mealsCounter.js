@@ -1,6 +1,4 @@
-import getElement from './getElement';
-
-export default (meals) => {
-  const counter = getElement('.meal-count');
-  counter.textContent = `(${meals.length})`;
+export default (meals, element) => {
+  element.textContent = `(${meals.length})`;
+  return meals.length;
 };

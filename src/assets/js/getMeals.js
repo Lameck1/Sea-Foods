@@ -9,5 +9,5 @@ export default async () => {
   };
   const result = await fetch(URI, requestOptions);
   const { meals } = await result.json();
-  return meals;
+  return meals.slice(0, 9);
 };
