@@ -10,7 +10,10 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "stylelint": "stylelint \"**/*.{css,scss}\"",
+    "eslint": "eslint .",
+    "lint": "npm run stylelint && npm run eslint"
   },
   "repository": {
     "type": "git",
