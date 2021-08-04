@@ -3,6 +3,7 @@ import createCommentModal from '../modal';
 import fetchSingleMeal from '../fetchSingleMeal';
 import { toggleModal } from '../dom.utils';
 import getElement from './getElement';
+// import { fetchMealSingleComment } from './comment';
 
 export default (foods, likes) => {
   const foodList = getElement('.food-list');
@@ -25,6 +26,7 @@ export default (foods, likes) => {
       const modal = document.querySelector('#modal-overlay');
       const content = document.querySelector('#content');
       const { meals } = await fetchSingleMeal(idMeal);
+      // const response = await fetchMealSingleComment(idMeal);
       toggleModal(modal, content);
       modal.appendChild(
         createCommentModal({
