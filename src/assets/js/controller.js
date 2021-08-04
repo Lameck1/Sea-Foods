@@ -1,6 +1,7 @@
 import getMeals from './getMeals';
 import { getLikes } from './helpers/likes';
 import listFoods from './helpers/listFoods';
+import mealsCounter from './helpers/mealsCounter';
 import homepageView from './homepageView';
 
 export default () => ({
@@ -9,6 +10,7 @@ export default () => ({
     const likes = await getLikes();
     homepageView();
     listFoods(meals, likes);
-    getMeals();
+    mealsCounter(meals);
+    this.handlePostLike();
   },
 });
