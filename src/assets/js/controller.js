@@ -24,7 +24,8 @@ export default () => ({
     const likes = await getLikes();
     homepageView();
     listFoods(meals, likes);
-    mealsCounter(meals);
+    const counter = getElement('.meal-count');
+    mealsCounter(meals, counter);
     this.handlePostLike();
   },
 });
