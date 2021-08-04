@@ -38,7 +38,7 @@ const baseModal = (args) => {
   return modal;
 };
 
-const poupulateComment = (comment) => {
+const createComment = (comment) => {
   const li = createElement('li', { class: 'comment' });
   li.innerHTML = `<span>${parseDate(comment.creation_date)} 
   ${capitalizeStr(comment.username)}:</span> <span>${comment.comment}</span>`;
@@ -61,7 +61,7 @@ const createCommentModal = (args) => {
   h4.appendChild(counter);
   if (comments.length > 0) {
     comments.forEach((comment) => {
-      commentList.append(poupulateComment(comment));
+      commentList.append(createComment(comment));
     });
   }
 
