@@ -42,6 +42,9 @@ export const footer = () => {
 
 export const createComment = (comment) => {
   const li = createElement('li', { class: 'comment' });
+  if (comment.username === '') {
+    return li;
+  }
   li.innerHTML = `<span>${parseDate(comment.creation_date)} 
   ${capitalizeStr(comment.username)}:</span> <span>${comment.comment}</span>`;
   return li;
