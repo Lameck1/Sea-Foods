@@ -42,17 +42,18 @@ const baseModal = (args) => {
 const createCommentModal = (args) => {
   const { meals, toggle, response } = args;
   const { idMeal } = meals[0];
+  const counter = commentCounter(response);
   let comments = [];
-  if (!response.error) {
+  if (counter > 0) {
     comments = response;
   }
   const content = createElement('div', { class: 'comments' });
   const h4 = createElement('h4');
-  const counter = createElement('span', { class: 'counter' });
-  counter.textContent = ` (${commentCounter(comments)})`;
+  const counterSpan = createElement('span', { class: 'counter' });
+  counterSpan.textContent = ` (${commentCounter(comments)})`;
   h4.innerHTML = 'Comments ';
   const commentList = createElement('ul', { class: 'comments-list' });
-  h4.appendChild(counter);
+  h4.appendChild(counterSpan);
   if (comments.length > 0) {
     comments.forEach((comment) => {
       commentList.append(createComment(comment));
@@ -89,7 +90,7 @@ const createCommentModal = (args) => {
     };
     await postMealComment(data);
     const comments = await fetchMealSingleComment(idMeal);
-    counter.textContent = ` (${commentCounter(comments)})`;
+    counterSpan.textContent = ` (${commentCounter(comments)})`;
     const lastComment = comments.pop();
     const li = createElement('li', { class: 'comment' });
     li.innerHTML = `<span>${parseDate(lastComment.creation_date)} 
