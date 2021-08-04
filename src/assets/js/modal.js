@@ -1,6 +1,7 @@
 import createElement from './helpers/createElement';
 import { fetchMealSingleComment, postMealComment } from './helpers/comment';
 import { capitalizeStr, parseDate } from './helpers/parse';
+import { createComment } from './dom.utils';
 
 const baseModal = (args) => {
   const {
@@ -38,12 +39,7 @@ const baseModal = (args) => {
   return modal;
 };
 
-const createComment = (comment) => {
-  const li = createElement('li', { class: 'comment' });
-  li.innerHTML = `<span>${parseDate(comment.creation_date)} 
-  ${capitalizeStr(comment.username)}:</span> <span>${comment.comment}</span>`;
-  return li;
-};
+const commentCounter = (comments) => comments.length;
 
 const createCommentModal = (args) => {
   const { meals, toggle, response } = args;
@@ -55,7 +51,7 @@ const createCommentModal = (args) => {
   const content = createElement('div', { class: 'comments' });
   const h4 = createElement('h4');
   const counter = createElement('span', { class: 'counter' });
-  counter.textContent = ` (${comments.length})`;
+  counter.textContent = ` (${commentCounter(comments)})`;
   h4.innerHTML = 'Comments ';
   const commentList = createElement('ul', { class: 'comments-list' });
   h4.appendChild(counter);
@@ -95,8 +91,7 @@ const createCommentModal = (args) => {
     };
     await postMealComment(data);
     const comments = await fetchMealSingleComment(idMeal);
-    counter.textContent = ` (${comments.length})`;
-    // h4.appendChild(counter);
+    counter.textContent = ` (${commentCounter(comments)})`;
     const lastComment = comments.pop();
     const li = createElement('li', { class: 'comment' });
     li.innerHTML = `<span>${parseDate(lastComment.creation_date)} 
