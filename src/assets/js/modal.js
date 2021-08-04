@@ -1,6 +1,6 @@
 import createElement from './helpers/createElement';
 import { fetchMealSingleComment, postMealComment } from './helpers/comment';
-import { capitalizeStr, parseDate } from './helpers/parse';
+import { capitalizeStr, parseDate, commentCounter } from './helpers/parse';
 import { createComment } from './dom.utils';
 
 const baseModal = (args) => {
@@ -38,8 +38,6 @@ const baseModal = (args) => {
 
   return modal;
 };
-
-const commentCounter = (comments) => comments.length;
 
 const createCommentModal = (args) => {
   const { meals, toggle, response } = args;
