@@ -1,22 +1,4 @@
-const API_KEY = 'rikZvpXgrNzHxQZjTHfV';
-const INVOLVEMENT_URI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}`;
-
-const post = async (URI, data = {}) => {
-  const response = await fetch(URI, {
-    mode: 'cors',
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-type': 'application/json; Charset=UTF-8',
-    },
-  });
-  return response;
-};
-
-const get = async (URI) => {
-  const response = await fetch(URI);
-  return response;
-};
+import { post, get, INVOLVEMENT_URI } from "./api";
 
 export const postMealComment = async (data) => {
   const END_POINT = '/comments/';
