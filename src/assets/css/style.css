@@ -34,6 +34,10 @@ img {
   background: #c10623;
 }
 
+.btn-submit {
+  background: #0256aa;
+}
+
 .header {
   margin-bottom: 3rem;
 }
@@ -233,4 +237,25 @@ img {
 .comment {
   font-size: 1.2rem;
   margin-bottom: 1rem;
+}
+
+.comment-form h6 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.comment-form form {
+  margin: 0 auto;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.input,
+.textarea {
+  outline: none;
+  border: 1px solid #000;
+  padding: 0.5rem;
 }
