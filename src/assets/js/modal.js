@@ -68,20 +68,20 @@ const createCommentModal = (args) => {
   const form = createElement('form');
   const nameField = createElement('div', { class: 'field' });
   const nameInput = createElement('input', {
-    class: 'input', type: 'text', id: 'name', name: 'name', placeholder: 'Your name',
+    class: 'input', type: 'text', id: 'name', name: 'name', placeholder: 'Your name', required: 'required',
   });
   nameField.append(nameInput);
 
   const messageField = createElement('div', { class: 'field' });
   const messageArea = createElement('textarea', {
-    class: 'textarea', cols: 30, rows: 10, id: 'message', name: 'message', placeholder: 'Your insights',
+    class: 'textarea', cols: 30, rows: 10, id: 'message', name: 'message', placeholder: 'Your insights', required: 'required',
   });
   messageField.appendChild(messageArea);
 
   const submitField = createElement('div', { class: 'field' });
   const submitBtn = createElement('button', { class: 'btn btn-submit' });
   submitBtn.textContent = 'Submit';
-  submitBtn.addEventListener('click', async (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const data = {
       item_id: idMeal,
