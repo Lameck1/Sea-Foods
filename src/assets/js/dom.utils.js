@@ -20,15 +20,11 @@ export const header = (logo) => {
   const img = createElement('img', { src: logo, alt: 'logo' });
   div.append(img);
   const ul = createElement('ul', { class: 'nav-list' });
-  const mealLi = createElement('li', { class: 'nav-item' });
-  mealLi.textContent = 'Meal ';
-  const counter = createElement('span');
-  counter.textContent = '6';
+  const mealLi = createElement('li', { class: 'nav-item' }, 'Meals');
+  const counter = createElement('span', { class: 'meal-count' });
   mealLi.append(counter);
-  const categoriesLi = createElement('li', { class: 'nav-item' });
-  categoriesLi.textContent = 'Categories';
-  const areasLi = createElement('li', { class: 'nav-item' });
-  areasLi.textContent = 'Areas';
+  const categoriesLi = createElement('li', { class: 'nav-item' }, 'Categories');
+  const areasLi = createElement('li', { class: 'nav-item' }, 'Areas');
   ul.append(mealLi, categoriesLi, areasLi);
   nav.append(div, ul);
   container.append(nav);
@@ -38,8 +34,7 @@ export const header = (logo) => {
 
 export const footer = () => {
   const footer = createElement('div', { class: 'footer' });
-  const p = createElement('p');
-  p.textContent = 'Created by Microverse under CC License';
+  const p = createElement('p', {}, 'Created by Microverse under CC License');
   footer.append(p);
   return footer;
 };
