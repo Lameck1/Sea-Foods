@@ -1,4 +1,5 @@
 import createElement from './helpers/createElement';
+import { capitalizeStr, parseDate } from './helpers/parse';
 
 const body = document.querySelector('body');
 
@@ -37,4 +38,14 @@ export const footer = () => {
   const p = createElement('p', {}, 'Created by Microverse under CC License');
   footer.append(p);
   return footer;
+};
+
+export const createComment = (comment) => {
+  const li = createElement('li', { class: 'comment' });
+  if (comment.username === '') {
+    return li;
+  }
+  li.innerHTML = `<span>${parseDate(comment.creation_date)} 
+  ${capitalizeStr(comment.username)}:</span> <span>${comment.comment}</span>`;
+  return li;
 };

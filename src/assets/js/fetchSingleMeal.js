@@ -1,4 +1,4 @@
-const BASE_URI = 'https://www.themealdb.com/api/json/v1/1/';
+import { BASE_URI } from './helpers/api';
 
 const fetchSingleMeal = async (id) => {
   const END_POINT = 'lookup.php?i=';

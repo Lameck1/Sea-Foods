@@ -7,3 +7,10 @@ export const capitalizeStr = (text) => {
   const newText = text[0].toUpperCase() + text.substring(1);
   return newText;
 };
+
+export const commentCounter = (response) => {
+  if (!response.error) {
+    return response.length;
+  }
+  return [].length;
+};

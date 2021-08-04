@@ -1,13 +1,14 @@
 import createElement from './helpers/createElement';
 import { fetchMealSingleComment, postMealComment } from './helpers/comment';
-import { capitalizeStr, parseDate } from './helpers/parse';
+import { capitalizeStr, parseDate, commentCounter } from './helpers/parse';
+import { createComment } from './dom.utils';
 
 const baseModal = (args) => {
   const {
     meals, toggle, content, formContent,
   } = args;
   const {
-    strMeal, strMealThumb, strCategory, strArea,
+    strMeal, strMealThumb, strCategory, strArea, strSource, strYoutube,
   } = meals[0];
   const modal = createElement('div', { class: 'modal' });
   const modalContent = createElement('div', { class: 'modal-content' });
@@ -29,7 +30,17 @@ const baseModal = (args) => {
   mealCategory.textContent = `Category: ${strCategory}`;
   const mealArea = createElement('li', { class: 'tag' });
   mealArea.textContent = `Area: ${strArea}`;
-  listDetails.append(mealCategory, mealArea);
+  const mealIngredient = createElement('li', { class: 'tag' });
+  mealIngredient.innerHTML = 'Ingredient: ';
+  const ingredientLink = createElement('a', { href: `${strSource}`, target: 'blank' });
+  ingredientLink.textContent = 'Ingredient Link';
+  mealIngredient.appendChild(ingredientLink);
+  const mealVideo = createElement('li', { class: 'tag' });
+  mealVideo.innerHTML = 'Video: ';
+  const videoLink = createElement('a', { href: `${strYoutube}`, target: 'blank' });
+  videoLink.textContent = 'Video Link';
+  mealVideo.appendChild(videoLink);
+  listDetails.append(mealCategory, mealArea, mealIngredient, mealVideo);
   briefDetails.append(h3, listDetails);
   modalBody.append(briefDetails, content);
   modalContent.append(modalHeader, modalBody, formContent);
@@ -39,17 +50,25 @@ const baseModal = (args) => {
 };
 
 const createCommentModal = (args) => {
-  const { meals, toggle } = args;
+  const { meals, toggle, response } = args;
   const { idMeal } = meals[0];
-  // const { error: { status } } = response;
-  // const comments = status === 400 ? [] : response;
+  const counter = commentCounter(response);
+  let comments = [];
+  if (counter > 0) {
+    comments = response;
+  }
   const content = createElement('div', { class: 'comments' });
   const h4 = createElement('h4');
-  // const counter = createElement('span', { class: 'counter' });
-  // counter.textContent = ` (${comments.length})`;
+  const counterSpan = createElement('span', { class: 'counter' });
+  counterSpan.textContent = ` (${commentCounter(comments)})`;
   h4.innerHTML = 'Comments ';
   const commentList = createElement('ul', { class: 'comments-list' });
-  // h4.appendChild(counter);
+  h4.appendChild(counterSpan);
+  if (comments.length > 0) {
+    comments.forEach((comment) => {
+      commentList.append(createComment(comment));
+    });
+  }
 
   const formContent = createElement('div', { class: 'comment-form' });
 
@@ -59,20 +78,20 @@ const createCommentModal = (args) => {
   const form = createElement('form');
   const nameField = createElement('div', { class: 'field' });
   const nameInput = createElement('input', {
-    class: 'input', type: 'text', id: 'name', name: 'name', placeholder: 'Your name',
+    class: 'input', type: 'text', id: 'name', name: 'name', placeholder: 'Your name', required: 'required',
   });
   nameField.append(nameInput);
 
   const messageField = createElement('div', { class: 'field' });
   const messageArea = createElement('textarea', {
-    class: 'textarea', cols: 30, rows: 10, id: 'message', name: 'message', placeholder: 'Your insights',
+    class: 'textarea', cols: 30, rows: 10, id: 'message', name: 'message', placeholder: 'Your insights', required: 'required',
   });
   messageField.appendChild(messageArea);
 
   const submitField = createElement('div', { class: 'field' });
   const submitBtn = createElement('button', { class: 'btn btn-submit' });
   submitBtn.textContent = 'Submit';
-  submitBtn.addEventListener('click', async (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const data = {
       item_id: idMeal,
@@ -81,8 +100,7 @@ const createCommentModal = (args) => {
     };
     await postMealComment(data);
     const comments = await fetchMealSingleComment(idMeal);
-    // counter.textContent = ` (${comments.length})`;
-    // h4.appendChild(counter);
+    counterSpan.textContent = ` (${commentCounter(comments)})`;
     const lastComment = comments.pop();
     const li = createElement('li', { class: 'comment' });
     li.innerHTML = `<span>${parseDate(lastComment.creation_date)} 
