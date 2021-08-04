@@ -38,18 +38,32 @@ const baseModal = (args) => {
   return modal;
 };
 
+const poupulateComment = (comment) => {
+  const li = createElement('li', { class: 'comment' });
+  li.innerHTML = `<span>${parseDate(comment.creation_date)} 
+  ${capitalizeStr(comment.username)}:</span> <span>${comment.comment}</span>`;
+  return li;
+};
+
 const createCommentModal = (args) => {
-  const { meals, toggle } = args;
+  const { meals, toggle, response } = args;
   const { idMeal } = meals[0];
-  // const { error: { status } } = response;
-  // const comments = status === 400 ? [] : response;
+  let comments = [];
+  if (!response.error) {
+    comments = response;
+  }
   const content = createElement('div', { class: 'comments' });
   const h4 = createElement('h4');
-  // const counter = createElement('span', { class: 'counter' });
-  // counter.textContent = ` (${comments.length})`;
+  const counter = createElement('span', { class: 'counter' });
+  counter.textContent = ` (${comments.length})`;
   h4.innerHTML = 'Comments ';
   const commentList = createElement('ul', { class: 'comments-list' });
-  // h4.appendChild(counter);
+  h4.appendChild(counter);
+  if (comments.length > 0) {
+    comments.forEach((comment) => {
+      commentList.append(poupulateComment(comment));
+    });
+  }
 
   const formContent = createElement('div', { class: 'comment-form' });
 
@@ -81,7 +95,7 @@ const createCommentModal = (args) => {
     };
     await postMealComment(data);
     const comments = await fetchMealSingleComment(idMeal);
-    // counter.textContent = ` (${comments.length})`;
+    counter.textContent = ` (${comments.length})`;
     // h4.appendChild(counter);
     const lastComment = comments.pop();
     const li = createElement('li', { class: 'comment' });
