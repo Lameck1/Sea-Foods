@@ -1,4 +1,4 @@
-const API_KEY = 'rikZvpXgrNzHxQZjTHfV';
+const API_KEY = 'aWCtjXe1coe2FbIUWyr9';
 
 export const INVOLVEMENT_URI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}`;
 export const BASE_URI = 'https://www.themealdb.com/api/json/v1/1/';

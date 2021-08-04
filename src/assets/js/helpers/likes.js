@@ -1,4 +1,4 @@
-const API_KEY = 'rikZvpXgrNzHxQZjTHfV';
+const API_KEY = 'aWCtjXe1coe2FbIUWyr9';
 const LIKES_ENDPOINT = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/likes`;
 
 export const postLike = async (mealId) => {
@@ -21,11 +21,15 @@ export const postLike = async (mealId) => {
 };
 
 export const getLikes = async () => {
-  const requestOptions = {
-    method: 'GET',
-    redirect: 'follow',
-  };
-  const response = await fetch(LIKES_ENDPOINT, requestOptions);
-  const likes = await response.json();
-  return likes;
+  try {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+    };
+    const response = await fetch(LIKES_ENDPOINT, requestOptions);
+    const likes = await response.json();
+    return likes;
+  } catch (error) {
+    return [];
+  }
 };
