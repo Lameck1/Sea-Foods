@@ -1,5 +1,17 @@
 import createElement from './helpers/createElement';
 
+const body = document.querySelector('body');
+
+export const toggleModal = (modal, content) => {
+  if (body.style.overflow === '') {
+    body.style.overflow = 'hidden';
+  } else {
+    body.style.overflow = '';
+    modal.innerHTML = '';
+  }
+  content.classList.toggle('open-modal');
+};
+
 export const header = (logo) => {
   const header = createElement('header', { class: 'header' });
   const container = createElement('container', { class: 'container' });

@@ -5,6 +5,15 @@ body {
   background-color: #fff;
 }
 
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
 .header {
   margin-bottom: 3rem;
 }
@@ -65,4 +74,82 @@ body {
   padding-left: 3rem;
   padding-bottom: 3rem;
   font-size: 1.3rem;
+}
+
+.content {
+  position: relative;
+}
+
+.content.open-modal .root {
+  filter: blur(4px);
+  overflow: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: auto;
+  display: none;
+  visibility: hidden;
+}
+
+.modal {
+  margin: 0;
+  height: auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.modal-content {
+  width: 50%;
+  margin: 0 auto;
+  padding: 5rem;
+  background: #fff;
+}
+
+.content.open-modal .modal-overlay {
+  display: block;
+  visibility: visible;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.modal-img {
+  width: 90%;
+  height: 200px;
+}
+
+.close-icon {
+  font-size: 5rem;
+  align-self: flex-start;
+}
+
+.brief-details {
+  margin-bottom: 2.5rem;
+}
+
+.brief-details h3 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.list-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tag {
+  font-size: 1.5rem;
 }
