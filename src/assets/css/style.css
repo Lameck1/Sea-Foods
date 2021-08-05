@@ -2,16 +2,7 @@
 @import 'reset.css';
 
 body {
-  background-color: #fff;
-}
-
-img {
-  max-width: 100%;
-  object-fit: cover;
-}
-
-.material-icons {
-  cursor: pointer;
+  background-color: #eaf4ff;
 }
 
 a {
@@ -21,21 +12,17 @@ a {
 .btn {
   outline: none;
   border: none;
-  display: block;
-  padding: 0.25rem 0.5rem;
   cursor: pointer;
   color: #fff;
-  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px;
+  background: #c10623;
 }
 
 .btn:hover {
   font-weight: 400;
-}
-
-.comments-btn {
-  width: 100%;
-  margin-bottom: 2.5rem;
-  background: #c10623;
+  color: #333;
+  opacity: 0.8;
 }
 
 .btn-submit {
@@ -43,33 +30,49 @@ a {
 }
 
 .header {
-  margin-bottom: 3rem;
+  height: 10vh;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
 }
 
 .nav {
-  width: 70%;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  height: inherit;
 }
 
 .nav-list {
   display: flex;
-  width: 60%;
-  justify-content: space-between;
-  margin-left: auto;
 }
 
 .nav-link {
   font-size: 1.5rem;
 }
 
+.nav-item {
+  font-weight: 600;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.nav-item:hover {
+  color: #ffb64d;
+}
+
+.nav-item:nth-last-of-type(3) {
+  text-decoration: underline;
+}
+
 .main {
-  width: 70%;
-  margin: 0 auto;
   padding: 20px 0;
+}
+
+.main,
+.nav {
+  width: 60%;
+  margin: 0 auto;
 }
 
 .d-flex {
@@ -87,10 +90,24 @@ a {
 
 .food-container {
   flex-direction: column;
+  background: #eee;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+}
+
+.food-container:hover {
+  box-shadow: 0 4px 8px 0 rgba(22, 9, 211, 0.2), 0 6px 20px 0 rgba(22, 9, 211, 0.19);
 }
 
 .meal-thumb {
-  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.item-name {
+  color: #0256aa;
+  padding: 0 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .details-div {
@@ -98,10 +115,16 @@ a {
   justify-content: space-between;
 }
 
+.footer {
+  padding: 15px 0;
+  background: inherit;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
+}
+
 .footer p {
-  padding-left: 3rem;
-  padding-bottom: 3rem;
-  font-size: 1.3rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #b36b6b;
 }
 
 .content {
@@ -109,7 +132,7 @@ a {
 }
 
 .content.open-modal .root {
-  filter: blur(4px);
+  filter: blur(5px);
   overflow: hidden;
 }
 
@@ -138,7 +161,9 @@ a {
   width: 50%;
   margin: 0 auto;
   padding: 5rem;
-  background: #fff;
+  background-color: #eaf4ff;
+  border-radius: 15px;
+  position: relative;
 }
 
 .content.open-modal .modal-overlay {
@@ -147,16 +172,31 @@ a {
 }
 
 .modal-header {
+  height: 50vh;
+}
+
+.modal-header span {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-  margin-bottom: 1rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #454d66;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal-header span:hover {
+  opacity: 0.8;
 }
 
 .modal-img {
-  width: 90%;
-  height: 200px;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
 
 .close-icon {
@@ -171,17 +211,19 @@ a {
 .brief-details h3 {
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 1.5rem;
+  padding: 10px 0;
 }
 
 .list-details {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .tag {
   font-size: 1.35rem;
-  margin-bottom: 1rem;
+  margin: auto;
 }
 
 .likes-div {
@@ -192,6 +234,8 @@ a {
 
 .likes-count {
   padding: 5px;
+  color: #c10623;
+  font-weight: 600;
 }
 
 .like-icon {
@@ -263,4 +307,14 @@ a {
   outline: none;
   border: 1px solid #000;
   padding: 0.5rem;
+}
+
+.logo {
+  width: 20vw;
+  margin-right: 10%;
+}
+
+.logo-img {
+  width: 100%;
+  border-radius: 30%;
 }
