@@ -20,7 +20,7 @@ This project uses [TheMealDB](https://www.themealdb.com/api.php) API for populat
 
 ## [Live Demo](https://lameck1.github.io/Sea-Foods/)
 
-## [Video Demo Link](https://www.loom.com/share/1ef13d34279b43eab1f38b2957ad19df)
+## [Video Demo Link](https://youtu.be/TkcdUBXIKY4)
 
 ## Built With
 
