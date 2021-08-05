@@ -15,6 +15,7 @@ export default (foods, likes) => {
     const mealThumb = createElement('img', { class: 'meal-thumb', 'data-id': `${idMeal}`, src: `${strMealThumb}` });
     const foodName = createElement('span', {
       'data-id': `${idMeal}`,
+      class: 'item-name',
     }, strMeal);
     const detailsDiv = createElement('div', { class: 'details-div d-flex' });
     const likesDiv = createElement('div', { class: 'likes-div d-flex' });
