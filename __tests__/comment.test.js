@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import fetchMealSingleComment from '../__mocks__/comment.mock';
 import createElement from '../src/assets/js/helpers/createElement';
 import commentCounter from '../__mocks__/comment_counter.mock';

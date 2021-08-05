@@ -36,6 +36,6 @@ describe('Meals Counter', () => {
     const container = document.body;
     const element = getByTestId(container, 'meal-count');
     mealsCounter(meals, element);
-    expect(element.textContent).toBe('(2)');
+    expect(element.textContent).toBe(' (2)');
   });
 });
