@@ -5,6 +5,7 @@
 * [About the Project](#about-the-project)
 * [Built With](#built-with)
 * [Getting Started](#getting-started)
+* [API Interactions](#api-interactions)
 * [Contributing](#contributing)
 * [Author](#author)
 * [Acknowledgements](#acknowledgements)
@@ -15,9 +16,9 @@ Sea Foods is a project that enlists dishes of sea life regarded as food. Users g
 
 This project uses [TheMealDB](https://www.themealdb.com/api.php) API for populating the list of sea foods and the [Involvement](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) API for adding likes and comments to any sea food item.
 
-<!-- ![screenshot](./src/assets/images/screenshot.png) -->
+![screenshot](./src/assets/img/screenshot.png)
 
-<!-- ## [Live Demo]() -->
+## [Live Demo](https://lameck1.github.io/Sea-Foods/)
 
 ## Built With
 
@@ -53,6 +54,18 @@ This project uses [TheMealDB](https://www.themealdb.com/api.php) API for populat
   * Just run ```npm run build``` or ```npx webpack``` which will build the project and generate output files into the ```dist``` directory.
 
   * Go to ```dist``` directory and manually open ```index.html``` to interact with the app
+
+## API Interactions
+
+### The MealDB
+
+From the MealDB API, this app/project is interacting/consuming this endpoint to get a list of meals:
+
+```https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood```
+
+### Involvement API
+
+In this API, the app consumes the `/likes/` and the `/comments/` endpoints. Take a look at the [DOCUMENTATION](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) and undestand how you can work with it.
 
 ## Contributing
 
