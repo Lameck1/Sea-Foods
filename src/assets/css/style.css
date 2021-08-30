@@ -206,11 +206,11 @@ a {
 
 .brief-details {
   margin-bottom: 2.5rem;
+  text-align: left;
 }
 
 .brief-details h3 {
   font-size: 2rem;
-  text-align: center;
   padding: 10px 0;
 }
 
@@ -223,7 +223,6 @@ a {
 
 .tag {
   font-size: 1.35rem;
-  margin: auto;
 }
 
 .likes-div {
