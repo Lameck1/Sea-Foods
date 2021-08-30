@@ -2,13 +2,20 @@
 
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-* [API Interactions](#api-interactions)
-* [Contributing](#contributing)
-* [Author](#author)
-* [Acknowledgements](#acknowledgements)
+- [Sea Foods](#sea-foods)
+  - [Table of Contents](#table-of-contents)
+  - [About Project](#about-project)
+  - [Live Demo](#live-demo)
+  - [Video Demo Link](#video-demo-link)
+  - [Built With](#built-with)
+  - [Getting Started](#getting-started)
+  - [API Interactions](#api-interactions)
+    - [The MealDB](#the-mealdb)
+    - [Involvement API](#involvement-api)
+  - [Contributing](#contributing)
+  - [Author](#author)
+  - [Acknowledgements](#acknowledgements)
+  - [Show your support](#show-your-support)
 
 ## About Project
 
@@ -94,7 +101,7 @@ Feel free to check the [issues page](https://github.com/Lameck1/Sea-Foods/issues
 
 * Github: [@githubhandle](https://github.com/olawale-o)
 * Twitter: [@twitterhandle](https://twitter.com/ibreaktherules)
-* LinkedIn: [LinkedIn](https://www.linkedin.com/in/olawale-omoogun-330a051b1/)
+* LinkedIn: [LinkedIn](https://www.linkedin.com/in/olawaleomoogun/)
 
 ## Acknowledgements
 
